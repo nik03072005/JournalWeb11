@@ -39,13 +39,13 @@ const Footer = () => {
               </div>
               <ul className="space-y-4">
                 {[
-                  { name: "NAAC", url: "http://naac.gov.in/index.php/" },
-                  { name: "Gauhati University", url: "http://www.gauhati.ac.in/" },
+                  { name: "Ministry of Education", url: "https://www.education.gov.in/en" },
+                  { name: "National Academic Depository", url: "https://nad.gov.in/" },
                   { name: "University Grant Commission", url: "https://www.ugc.gov.in/" },
-                  { name: "Director of Higher Education", url: "http://www.dheassam.gov.in/" },
-                  { name: "Anti Ragging Affidavit", url: "#" },
-                  { name: "National Council For Teacher Education", url: "http://www.ncte-india.org/" },
-                  { name: "Old Website", url: "#" }
+                  { name: "Ministry Of Science and Technology", url: "https://dst.gov.in/" },
+                  { name: "Anti Ragging Affidavit", url: "https://antiragging.in/" },
+                  { name: "Swayam", url: "https://swayam.gov.in/" },
+                  // { name: "Old Website", url: "#" }
                 ].map((link, index) => (
                   <li key={index} className="group">
                     <a 
