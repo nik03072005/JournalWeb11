@@ -140,7 +140,7 @@ export default function Home() {
       <div
         className="min-h-screen relative overflow-hidden"
         style={{
-          backgroundImage: "linear-gradient(135deg, rgba(147, 51, 234, 0.7), rgba(99, 102, 241, 0.5)), url('/library.jpg')",
+          backgroundImage: "linear-gradient(135deg, rgba(147, 51, 234, 0.5), rgba(99, 102, 241, 0.3)), url('/library.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
@@ -149,30 +149,30 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-24 pb-10">
-          <div className="bg-white/10 backdrop-blur-md rounded-full px-5 py-2 border border-white/20 shadow-md">
-            <span className="text-sm text-white font-medium">
+          <div className="bg-white/10 backdrop-blur-md rounded-full px-5 py-2 border border-white/20 shadow-2xl shadow-purple-500/20 ring-1 ring-white/10">
+            <span className="text-sm text-white font-medium drop-shadow-lg">
               Digital Library - Dispur College
             </span>
           </div>
 
-          <h1 className="mt-6 text-5xl md:text-6xl font-bold text-white leading-tight">
+          <h1 className="mt-6 text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(147,51,234,0.3), 2px 2px 4px rgba(0,0,0,0.8)'}}>
             Unlock Ancient{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="text-white">
               Wisdom
             </span>
             <br />
-            <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-white">
               Today
             </span>
           </h1>
 
-          <p className="mt-4 text-gray-200 text-lg max-w-2xl">
+          <p className="mt-4 text-gray-200 text-lg max-w-2xl drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
             Access millions of academic resources, research papers, and digital collections. 
             Your gateway to unlimited knowledge in the digital age.
           </p>
 
           {/* Search Bar */}
-          <div className="mt-8 flex w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 overflow-hidden shadow-lg">
+          <div className="mt-8 flex w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 overflow-hidden shadow-2xl shadow-purple-500/30 ring-1 ring-white/10">
             <input
               type="text"
               placeholder="Search books, articles, research papers..."
@@ -188,7 +188,7 @@ export default function Home() {
             />
             <button
               onClick={handleSearch}
-              className={`bg-purple-600 hover:bg-purple-700 transition-all font-bold px-6 py-4 text-white ${
+              className={`bg-purple-600 hover:bg-purple-700 transition-all font-bold px-6 py-4 text-white shadow-xl shadow-purple-500/50 hover:shadow-purple-400/60 drop-shadow-lg ${
                 !searchTerm.trim() ? 'opacity-50 cursor-not-allowed' : ''
               }`}
               disabled={!searchTerm.trim()}
@@ -205,7 +205,7 @@ export default function Home() {
                 <Link
                   key={index}
                   href={`/search/${encodeURIComponent(search)}`}
-                  className="px-3 py-1 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm rounded-full transition-all"
+                  className="px-3 py-1 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm rounded-full transition-all shadow-lg shadow-white/10 drop-shadow-md hover:shadow-white/20"
                 >
                   {search}
                 </Link>
@@ -216,7 +216,7 @@ export default function Home() {
           {/* Advanced Search Button */}
           <Link
             href="/advanceSearch"
-            className="mt-4 px-5 py-2 bg-white/10 hover:border-indigo-700 border border-white/20 backdrop-blur-md text-white rounded-full hover:bg-white/20 transition flex items-center gap-2 shadow-sm"
+            className="mt-4 px-5 py-2 bg-white/10 hover:border-indigo-700 border border-white/20 backdrop-blur-md text-white rounded-full hover:bg-white/20 transition flex items-center gap-2 shadow-xl shadow-white/20 ring-1 ring-white/10 drop-shadow-lg hover:shadow-white/30"
             aria-label="Advanced Search"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,25 +229,25 @@ export default function Home() {
           <div className="mt-4 flex flex-wrap justify-center gap-4">
             <Link
               href="/type/book"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition"
+              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
             >
               E-Books
             </Link>
             <Link
               href="/type/journal"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition"
+              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
             >
               Journals
             </Link>
             <Link
               href="/type/archive"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition"
+              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
             >
               Archives
             </Link>
             <Link
               href="/type/dataset"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition"
+              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
             >
               Datasets
             </Link>
