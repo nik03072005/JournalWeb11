@@ -68,8 +68,8 @@ const checkSubscription = async () => {
       return;
     }
       // ✅ Check subscription first
-  const valid = await checkSubscription();
-  if (!valid) return;
+  // const valid = await checkSubscription();
+  // if (!valid) return;
 
     setLoading(true);
     try {
@@ -94,7 +94,7 @@ const checkSubscription = async () => {
   }
 }, 1000);
     } catch (err) {
-      setError(err.response?.data?.message || 'Sign-in failed. Please try again.');
+      setError(err.response?.data?.message );
     } finally {
       setLoading(false);
     }
@@ -107,8 +107,8 @@ const checkSubscription = async () => {
       return;
     }
       // ✅ Check subscription first
-  const valid = await checkSubscription();
-  if (!valid) return;
+  // const valid = await checkSubscription();
+  // if (!valid) return;
 
     setLoading(true);
     try {
