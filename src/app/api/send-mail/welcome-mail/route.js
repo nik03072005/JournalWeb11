@@ -56,9 +56,9 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: `"Digital Library - College of Education, Morigaon 🎓" <${process.env.SMTP_EMAIL}>`,
+      from: `"Digital Library - Dispur College 🎓" <${process.env.SMTP_EMAIL}>`,
       to: email,
-      subject: 'Welcome to Digital Library - College of Education, Morigaon',
+      subject: 'Welcome to Digital Library - Dispur College',
       html: htmlTemplate,
     };
 
