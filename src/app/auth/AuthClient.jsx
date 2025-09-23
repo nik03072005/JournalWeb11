@@ -74,7 +74,7 @@ const checkSubscription = async () => {
   
   setLoading(true);
   try {
-      console.log("fdgdf")
+      console.log("fdgdfwddwwwew")
       const response = await axios.post(`/api/auth/login`, signinForm);
       setSuccess('Sign-in successful! Redirecting...');
       const token = response.data.token;
