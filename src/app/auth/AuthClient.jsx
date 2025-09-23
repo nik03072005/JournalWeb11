@@ -68,13 +68,11 @@ const checkSubscription = async () => {
       return;
     }
       // ✅ Check subscription first
-  // const valid = await checkSubscription();
-  // if (!valid) return;
-  console.log("fdgdf")
-  
-  setLoading(true);
-  try {
-      console.log("fdgdfwddwwwew")
+  const valid = await checkSubscription();
+  if (!valid) return;
+
+    setLoading(true);
+    try {
       const response = await axios.post(`/api/auth/login`, signinForm);
       setSuccess('Sign-in successful! Redirecting...');
       const token = response.data.token;
@@ -96,8 +94,7 @@ const checkSubscription = async () => {
   }
 }, 1000);
     } catch (err) {
-      console.log(err,"fdfgdgdgdgd")
-      setError(err.response?.data?.message );
+      setError(err.response?.data?.message || 'Sign-in failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -156,7 +153,7 @@ const checkSubscription = async () => {
       {/* Header */}
       <div className="text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-bold text-black mb-2">
-          Digital Library - Dispur College
+          Digital Library - Dispur college
         </h1>
       </div>
       

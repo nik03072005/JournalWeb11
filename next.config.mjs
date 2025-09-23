@@ -10,7 +10,7 @@ const nextConfig = {
       },
        {
         protocol: 'https',
-        hostname: 'chaiduarcollege.s3.ap-south-1.amazonaws.com',
+        hostname: 'dispurcollege.s3.ap-south-1.amazonaws.com',
         port: '',
         pathname: '/**',
       },
