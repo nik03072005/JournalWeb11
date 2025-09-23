@@ -68,8 +68,8 @@ const checkSubscription = async () => {
       return;
     }
       // ✅ Check subscription first
-  const valid = await checkSubscription();
-  if (!valid) return;
+  // const valid = await checkSubscription();
+  // if (!valid) return;
 
     setLoading(true);
     try {
