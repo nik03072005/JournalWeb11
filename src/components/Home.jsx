@@ -140,7 +140,7 @@ export default function Home() {
       <div
         className="min-h-screen relative overflow-hidden"
         style={{
-          backgroundImage: "linear-gradient(135deg, rgba(147, 51, 234, 0.5), rgba(99, 102, 241, 0.3)), url('/library.jpg')",
+          backgroundImage: "linear-gradient(135deg, rgb(0 0 0 / 50%), rgba(99, 102, 241, 0.8)), url('/library.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
