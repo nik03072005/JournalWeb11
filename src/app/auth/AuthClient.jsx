@@ -94,7 +94,7 @@ const checkSubscription = async () => {
   }
 }, 1000);
     } catch (err) {
-      console.log(err)
+      console.log(err,"fdfgdgdgdgd")
       setError(err.response?.data?.message );
     } finally {
       setLoading(false);
