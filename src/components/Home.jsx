@@ -140,7 +140,7 @@ export default function Home() {
       <div
         className="min-h-screen relative overflow-hidden"
         style={{
-          backgroundImage: "linear-gradient(135deg, rgb(0 0 0 / 50%), rgba(99, 102, 241, 0.8)), url('/library.jpg')",
+          backgroundImage: "linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/library.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
@@ -149,13 +149,13 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-24 pb-10">
-          <div className="bg-white/10 backdrop-blur-md rounded-full px-5 py-2 border border-white/20 shadow-2xl shadow-purple-500/20 ring-1 ring-white/10">
-            <span className="text-sm text-white font-medium drop-shadow-lg">
+          <div className="bg-white/20 backdrop-blur-md rounded-full px-5 py-2 border border-white/40 shadow-2xl shadow-black/30 ring-1 ring-white/20">
+            <span className="text-sm text-white font-semibold drop-shadow-lg">
               Digital Library - Dispur College
             </span>
           </div>
 
-          <h1 className="mt-6 text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(147,51,234,0.3), 2px 2px 4px rgba(0,0,0,0.8)'}}>
+          <h1 className="mt-6 text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-2xl" style={{textShadow: '0 0 30px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4), 3px 3px 6px rgba(0,0,0,1)'}}>
             Unlock Ancient{" "}
             <span className="text-white">
               Wisdom
@@ -166,13 +166,13 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="mt-4 text-gray-200 text-lg max-w-2xl drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
+          <p className="mt-4 text-gray-100 text-lg max-w-2xl drop-shadow-lg font-medium" style={{textShadow: '2px 2px 4px rgba(0,0,0,1)'}}>
             Access millions of academic resources, research papers, and digital collections. 
             Your gateway to unlimited knowledge in the digital age.
           </p>
 
           {/* Search Bar */}
-          <div className="mt-8 flex w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 overflow-hidden shadow-2xl shadow-purple-500/30 ring-1 ring-white/10">
+          <div className="mt-8 flex w-full max-w-2xl bg-white/15 backdrop-blur-lg rounded-xl border border-white/40 overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/20">
             <input
               type="text"
               placeholder="Search books, articles, research papers..."
@@ -183,14 +183,30 @@ export default function Home() {
                   handleSearch();
                 }
               }}
-              className="px-5 py-4 w-full bg-transparent text-white placeholder-gray-300 focus:outline-none"
+              className="px-5 py-4 w-full bg-transparent text-white placeholder-gray-200 focus:outline-none"
               aria-label="Search for academic resources"
             />
             <button
               onClick={handleSearch}
-              className={`bg-purple-600 hover:bg-purple-700 transition-all font-bold px-6 py-4 text-white shadow-xl shadow-purple-500/50 hover:shadow-purple-400/60 drop-shadow-lg ${
+              className={`transition-all font-bold px-6 py-4 text-white shadow-xl drop-shadow-lg ${
                 !searchTerm.trim() ? 'opacity-50 cursor-not-allowed' : ''
               }`}
+              style={{
+                backgroundColor: '#0ebcf5',
+                boxShadow: '0 25px 50px -12px rgba(14, 188, 245, 0.5)',
+              }}
+              onMouseEnter={(e) => {
+                if (searchTerm.trim()) {
+                  e.target.style.backgroundColor = '#0aa5d9';
+                  e.target.style.boxShadow = '0 25px 50px -12px rgba(14, 188, 245, 0.6)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (searchTerm.trim()) {
+                  e.target.style.backgroundColor = '#0ebcf5';
+                  e.target.style.boxShadow = '0 25px 50px -12px rgba(14, 188, 245, 0.5)';
+                }
+              }}
               disabled={!searchTerm.trim()}
               aria-label="Submit search"
             >
@@ -205,7 +221,7 @@ export default function Home() {
                 <Link
                   key={index}
                   href={`/search/${encodeURIComponent(search)}`}
-                  className="px-3 py-1 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm rounded-full transition-all shadow-lg shadow-white/10 drop-shadow-md hover:shadow-white/20"
+                  className="px-3 py-1 bg-white/15 hover:bg-white/30 text-white text-xs sm:text-sm rounded-full transition-all shadow-lg shadow-black/20 drop-shadow-md hover:shadow-black/30 border border-white/20"
                 >
                   {search}
                 </Link>
@@ -216,7 +232,7 @@ export default function Home() {
           {/* Advanced Search Button */}
           <Link
             href="/advanceSearch"
-            className="mt-4 px-5 py-2 bg-white/10 hover:border-indigo-700 border border-white/20 backdrop-blur-md text-white rounded-full hover:bg-white/20 transition flex items-center gap-2 shadow-xl shadow-white/20 ring-1 ring-white/10 drop-shadow-lg hover:shadow-white/30"
+            className="mt-4 px-5 py-2 bg-white/15 hover:bg-white/25 border border-white/40 backdrop-blur-md text-white rounded-full transition flex items-center gap-2 shadow-xl shadow-black/30 ring-1 ring-white/20 drop-shadow-lg hover:shadow-black/40"
             aria-label="Advanced Search"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,25 +245,25 @@ export default function Home() {
           <div className="mt-4 flex flex-wrap justify-center gap-4">
             <Link
               href="/type/book"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
+              className="px-6 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/25 transition shadow-lg shadow-black/20 ring-1 ring-white/10 drop-shadow-md hover:shadow-black/30"
             >
               E-Books
             </Link>
             <Link
               href="/type/journal"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
+              className="px-6 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/25 transition shadow-lg shadow-black/20 ring-1 ring-white/10 drop-shadow-md hover:shadow-black/30"
             >
               Journals
             </Link>
             <Link
               href="/type/archive"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
+              className="px-6 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/25 transition shadow-lg shadow-black/20 ring-1 ring-white/10 drop-shadow-md hover:shadow-black/30"
             >
               Archives
             </Link>
             <Link
               href="/type/dataset"
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium hover:bg-white/20 transition shadow-lg shadow-white/10 ring-1 ring-white/5 drop-shadow-md hover:shadow-white/20"
+              className="px-6 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/25 transition shadow-lg shadow-black/20 ring-1 ring-white/10 drop-shadow-md hover:shadow-black/30"
             >
               Datasets
             </Link>
@@ -255,41 +271,41 @@ export default function Home() {
 
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-5xl">
-            <div className="bg-black/30 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center border border-white/20">
-              <div className="text-white text-3xl mb-2">
+            <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl shadow-2xl shadow-black/50 text-center border border-white/30 ring-1 ring-white/10">
+              <div className="text-white text-3xl mb-2 drop-shadow-lg">
                 <FileText className="w-8 h-8 mx-auto" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-blue-400">
+              <h3 className="text-3xl md:text-4xl font-bold text-blue-400 drop-shadow-lg">
                 {stats.loading ? formatNumber(animatedNumbers.articles) : "115L+"}
               </h3>
-              <p className="text-gray-200 text-sm mt-2">Articles</p>
+              <p className="text-gray-100 text-sm mt-2 font-medium drop-shadow-md">Articles</p>
             </div>
-            <div className="bg-black/30 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center border border-white/20">
-              <div className="text-white text-3xl mb-2">
+            <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl shadow-2xl shadow-black/50 text-center border border-white/30 ring-1 ring-white/10">
+              <div className="text-white text-3xl mb-2 drop-shadow-lg">
                 <BookOpen className="w-8 h-8 mx-auto" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-purple-400">
+              <h3 className="text-3xl md:text-4xl font-bold text-purple-400 drop-shadow-lg">
                 {stats.loading ? formatNumber(animatedNumbers.books) : "0+"}
               </h3>
-              <p className="text-gray-200 text-sm mt-2">Books</p>
+              <p className="text-gray-100 text-sm mt-2 font-medium drop-shadow-md">Books</p>
             </div>
-            <div className="bg-black/30 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center border border-white/20">
-              <div className="text-white text-3xl mb-2">
+            <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl shadow-2xl shadow-black/50 text-center border border-white/30 ring-1 ring-white/10">
+              <div className="text-white text-3xl mb-2 drop-shadow-lg">
                 <Database className="w-8 h-8 mx-auto" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-green-400">
+              <h3 className="text-3xl md:text-4xl font-bold text-green-400 drop-shadow-lg">
                 {stats.loading ? formatNumber(animatedNumbers.journals) : "21K+"}
               </h3>
-              <p className="text-gray-200 text-sm mt-2">Journals</p>
+              <p className="text-gray-100 text-sm mt-2 font-medium drop-shadow-md">Journals</p>
             </div>
-            <div className="bg-black/30 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center border border-white/20">
-              <div className="text-white text-3xl mb-2">
+            <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl shadow-2xl shadow-black/50 text-center border border-white/30 ring-1 ring-white/10">
+              <div className="text-white text-3xl mb-2 drop-shadow-lg">
                 <Clock className="w-8 h-8 mx-auto" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-pink-400">
+              <h3 className="text-3xl md:text-4xl font-bold text-pink-400 drop-shadow-lg">
                 24/7
               </h3>
-              <p className="text-gray-200 text-sm mt-2">Access Always Available</p>
+              <p className="text-gray-100 text-sm mt-2 font-medium drop-shadow-md">Access Always Available</p>
             </div>
           </div>
         </div>
